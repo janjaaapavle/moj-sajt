@@ -1,0 +1,326 @@
+
+/* OSNOVNA PODESAVANJA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --pozadina: #080b12;
+    --povrsina: #101725;
+    --plava: #1685ff;
+    --svijetloplava: #55adff;
+    --bijela: #f5f7fb;
+    --siva: #a6b0c0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--pozadina);
+    color: var(--bijela);
+    line-height: 1.7;
+}
+
+/* LINKOVI */
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: var(--svijetloplava);
+}
+
+/* GORNJI MENI */
+header {
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: rgba(8, 11, 18, 0.95);
+    border-bottom: 1px solid rgba(22, 133, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    display: block;
+    color: var(--plava);
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+nav a {
+    color: var(--siva);
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--plava);
+}
+
+/* SVE SEKCIJE */
+section {
+    padding: 100px 10%;
+    scroll-margin-top: 90px;
+}
+
+section > p {
+    color: var(--siva);
+}
+
+/* NASLOVNA STRANICA */
+#pocetna {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background:
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(22, 133, 255, 0.16),
+            transparent 35%
+        );
+}
+
+#pocetna > p:first-child {
+    color: var(--svijetloplava);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.15;
+    max-width: 850px;
+    margin-bottom: 25px;
+}
+
+h1 span {
+    display: block;
+    color: var(--plava);
+}
+
+#pocetna > p:not(:first-child) {
+    max-width: 620px;
+    margin-bottom: 30px;
+}
+
+/* DUGMAD */
+#pocetna > a,
+#kontakt a[href^="tel:"],
+#kontakt a[href^="https://wa.me"],
+#kontakt a[href^="viber:"],
+#kontakt a[href^="mailto:"] {
+    display: inline-block;
+    padding: 11px 20px;
+    margin: 6px 8px 6px 0;
+    border-radius: 8px;
+    border: 1px solid var(--plava);
+}
+
+#pocetna > a:first-of-type {
+    background: var(--plava);
+    color: white;
+}
+
+#pocetna > a:hover,
+#kontakt a:hover {
+    background: var(--plava);
+    color: white;
+    box-shadow: 0 0 22px rgba(22, 133, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* O MENI */
+#omeni {
+    background: var(--povrsina);
+    border-top: 1px solid #1b2b42;
+    border-bottom: 1px solid #1b2b42;
+}
+
+h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+#omeni p {
+    color: var(--siva);
+    max-width: 800px;
+    margin-bottom: 18px;
+}
+
+/* USLUGE */
+#usluge {
+    text-align: center;
+}
+
+#usluge article {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    min-width: 220px;
+    margin: 12px 1%;
+    padding: 28px 22px;
+    background: var(--povrsina);
+    border: 1px solid #202c40;
+    border-radius: 14px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+#usluge article:hover {
+    border-color: var(--plava);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+#usluge article p {
+    color: var(--siva);
+}
+
+/* KONTAKT */
+#kontakt {
+    background:
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(22, 133, 255, 0.13),
+            transparent 35%
+        ),
+        var(--povrsina);
+}
+
+#kontakt h2 {
+    max-width: 650px;
+}
+
+#kontakt p {
+    margin-bottom: 16px;
+    color: var(--siva);
+    overflow-wrap: anywhere;
+}
+
+#kontakt a {
+    overflow-wrap: anywhere;
+}
+
+/* DONJI DIO */
+footer {
+    padding: 25px 10%;
+    text-align: center;
+    color: var(--siva);
+    font-size: 13px;
+    border-top: 1px solid #202c40;
+}
+
+/* PRILAGODJAVANJE TELEFONIMA */
+@media (max-width: 700px) {
+    header {
+        padding: 18px 5%;
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    #pocetna {
+        min-height: 70vh;
+    }
+
+    #usluge article {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        margin: 18px 0;
+    }
+
+    #kontakt a {
+        max-width: 100%;
+    }
+}
+/* ANIMACIJE PRI SKROLOVANJU */
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        transition: none;
+        transform: none;
+    }
+}
+.hero-slika {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+}
+
+#pocetna {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Pozadinske plave cestice */
+
+#plave-tackice {
+    position: fixed;
+    insent: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+body > *:not(#plave-tackice) {
+    position: relative;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #plave-tackice {
+        display: none;
+    }
+}
